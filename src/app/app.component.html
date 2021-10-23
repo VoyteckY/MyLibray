@@ -5,23 +5,28 @@
     </div>
     <div class="navbar">
       <ul>
-        <li><a href="#">Music</a></li>
-        <li><a href="#">Game</a></li>
+        <li><a class="nav-link" href="#">Music</a></li>
+        <!-- <li><a class="nav-link" href="#">Game</a></li> -->
+        <li><a class="nav-link" href="#">SAVE</a></li>
       </ul>
     </div>
   </div>
   <hr>
   <div class="search">
     <input type="text" placeholder="wyszukaj albumu">
+    <button>Szukaj</button>
   </div>
   <hr>
   <div class="container">
-    <h3>Lista płyt w kolekcji:</h3>
-    <a href="" *ngFor="let music of musicList">
-      <div class="claster">
-        <span>{{music.artist}} {{music.album}}
-          <img [src]="music.imgCover" alt="" class="cover" style="max-height: 50px;"></span>
-      </div>
-    </a>
+    <div class="collection" *ngFor="let music of musicList; index as a">
+      <span style="--i:{{a+1}}"><img [src]="music.imgCover" alt="" class="cover" style="max-height: 150px;"></span>
+      <!-- <a href="" *ngFor="let music of musicList">
+        <div class="claster">
+          <img [src]="music.imgCover" alt="" class="cover" style="max-height: 50px;">
+          {{ music.artist}} - {{music.album}}
+        </div>
+      </a> -->
+    </div>
   </div>
 </div>
+
