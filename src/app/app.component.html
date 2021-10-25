@@ -1,28 +1,30 @@
 <div class="wrap">
   <div class="nav">
-    <div class="head">
+    <div class="header">
       <h1>MyLibray</h1>
     </div>
     <div class="navbar">
       <ul>
         <li><a class="nav-link" href="#">Music</a></li>
-        <!-- <li><a class="nav-link" href="#">Game</a></li> -->
       </ul>
-  
     </div>
   </div>
-  
-  <app-add class="app"></app-add>
-  <div class="container">    
+
+  <!-- <app-add class="app" (addNew)='add()'></app-add> -->
+  <div class="container2">
+    <label for="">Artysta: <input type="text" [(ngModel)]="newAlbum.artist"></label>
+    <label for="">Album: <input type="text" [(ngModel)]="newAlbum.album"></label>
+    <label for="">URL: <input type="text" [(ngModel)]="newAlbum.imgCover"></label>
+  </div>
+  <button (click)='add()'>Dodaj</button>
+
+  <div class="container">
     <div class="collection" *ngFor="let music of musicList; index as a">
-      <a href="">
-        <div class="claster">
-          <img [src]="music.imgCover" alt="" class="cover" style="max-height: 50px;">
-          <span>{{ music.artist}} - </span>
-          <span>{{music.album}}</span>
-        </div>
-      </a>
+      <div class="cluster" (click)="information()">
+        <img [src]="music.imgCover" alt="" class="cover" style="max-height: 50px;">
+        <span>{{ music.artist}} - </span>
+        <span>{{music.album}}</span>
+      </div>
     </div>
   </div>
 </div>
-

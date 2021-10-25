@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add',
@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add.component.css']
 })
 export class AddComponent implements OnInit {
+  @Input() artist: string = ''
+  @Input() album: string = ''
+  @Input() url: string = ''
+
+  @Output()
+  addNew = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addCd() {
+    this.addNew.emit()
   }
 
 }
