@@ -7,23 +7,19 @@
       <ul>
         <li><a class="nav-link" href="#">Music</a></li>
         <!-- <li><a class="nav-link" href="#">Game</a></li> -->
-        <li><a class="nav-link" href="#">SAVE</a></li>
       </ul>
+  
     </div>
   </div>
-  <hr>
-  <div class="search">
-    <input type="text" placeholder="wyszukaj albumu">
-    <button>Szukaj</button>
-  </div>
-  <hr>
+  
+  <app-add class="app"></app-add>
   <div class="container">    
     <div class="collection" *ngFor="let music of musicList; index as a">
-      <span style="--i:1"><img [src]="music.imgCover" alt="" class="cover" style="max-height: 150px;"></span> -->
-      <a href="" *ngFor="let music of musicList">
+      <a href="">
         <div class="claster">
           <img [src]="music.imgCover" alt="" class="cover" style="max-height: 50px;">
-          {{ music.artist}} - {{music.album}}
+          <span>{{ music.artist}} - </span>
+          <span>{{music.album}}</span>
         </div>
       </a>
     </div>
